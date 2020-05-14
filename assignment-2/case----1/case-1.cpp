@@ -15,6 +15,8 @@ public:
         cout<<" press 2 to display user list"<<endl;
         cout<<" press 3 to search user list"<<endl;
         cout<<" press 4 to delete user list"<<endl;
+        cout<<" press 5 to search by friend "<<endl;
+        cout<<" press 6 to only display list "<<endl;
     }
      void option()      //menu card
     {
@@ -32,7 +34,10 @@ public:
                    break;
             case 4:erase();
                     break;
-
+            case 5:srchByFriend();
+                    break;
+            case 6:onlyDisplay();
+                    break;
             default:
                     cout<<" Entered option is in valid "<<endl;
         }
@@ -178,6 +183,39 @@ public:
     ~student()
     {
         cout<<" Destructor is involked "<<endl;
+    }
+    void srchByFriend()
+    {
+        string fd;
+        cout<<" Enter the friend name:- "<<endl;
+        cin>>fd;
+        for(auto et=mp2.begin();et!=mp2.end();et++)
+        {
+            string ele;
+            ele=et->second;
+            if(fd==ele)
+            {
+                cout<<et->second<<" is the friend of "<<et->first<<endl;
+            }
+        }
+        option();
+    }
+     void onlyDisplay()         //To display the list
+    {
+            cout<<" name "<<" \t \t "<<" email "<<"\t \t "<<" friend name "<<endl;
+            for(auto it=mp1.begin();it!=mp1.end();it++) //using iterator
+            {
+                for(auto et=mp2.begin();et!=mp2.end();et++)
+                {
+                      string p=it->first;
+                      string q=et->first;
+                      if(p==q)
+                      {
+                          cout<<it->first<<" \t\t"<<it->second<<" \t\t "<<et->second<<endl;
+                       }
+                }
+            }
+
     }
 
 };
