@@ -8,6 +8,7 @@ class student           //creating class
 public:
     map<string,string> mp1;
     map<string,string> mp2;
+    map<string,string> mp3;
     student()           //student class constructor
     {
         cout<<"Student class constructor is involked "<<endl;
@@ -16,7 +17,8 @@ public:
         cout<<" press 3 to search user list"<<endl;
         cout<<" press 4 to delete user list"<<endl;
         cout<<" press 5 to search by friend "<<endl;
-        cout<<" press 6 to only display list "<<endl;
+        cout<<" press 6 to get suggssion "<<endl;
+        cout<<" press 7 to only display list "<<endl;
     }
      void option()      //menu card
     {
@@ -36,7 +38,9 @@ public:
                     break;
             case 5:srchByFriend();
                     break;
-            case 6:onlyDisplay();
+            case 6:sugges();
+                    break;
+            case 7:onlyDisplay();
                     break;
             default:
                     cout<<" Entered option is in valid "<<endl;
@@ -217,6 +221,28 @@ public:
             }
 
     }
+    void sugges()   //function for suggession
+    {
+        string sug;
+        cout<<" Enter the name to find suggssion :- "<<endl;
+        cin>>sug;
+        for(auto et=mp2.begin();et!=mp2.end();et++)
+        {
+            string a=et->first;
+            if(sug==a)
+            {
+                string b=et->second;
+                for(auto it=mp2.begin();it!=mp2.end();it++)
+                {
+                    if(b==it->first)
+                    {
+                        cout<<sug<<" suggesion is :- "<<it->second<<endl;
+                    }
+                }
+            }
+        }
+        option();
+    }
 
 };
 int main(int argc,char* argv[])
@@ -235,3 +261,4 @@ int main(int argc,char* argv[])
         obj.option();
     }
 }
+
