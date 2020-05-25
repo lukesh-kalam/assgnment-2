@@ -5,9 +5,8 @@ using namespace std;
 class matrix                    //matrix class is created
 {
 public:
-    char arr[100][100],arr1[100][100];      //created empty array and required things
-    int row,col,i,j,k,count=0;
-    int row1,col1;
+    char arr[100][100],arr1[100][100],trans1[100][100],trans2[100][100];      //created empty array and required things
+    int row,col,i,j,k;
 
     matrix()                    //constructor
     {
@@ -46,8 +45,6 @@ private:
         cin>>row;
         cout<<" Enter col :- "<<endl;
         cin>>col;
-        row1=row;
-        col1=col;
         if(col>1)                           //taking inputs
         {
                 for(i=1;i<=row;i++)
@@ -74,8 +71,8 @@ private:
                             k=j+1;
                             if(arr[i][j]==arr[i][k])
                             {
-                                arr[i][j]='*';
-                                cout<<arr[i][j];                //giving output
+                                arr1[i][j]='*';
+                                cout<<arr1[i][j];                //giving output
                             }
 
                         }
@@ -92,14 +89,62 @@ private:
 
     void row_op()
     {
+        cout<<" Enter Row :- "<<endl;
+        cin>>row;
+        cout<<" Enter Col :- "<<endl;
+        cin>>col;
+
+        if(row>1)
+        {
+            for(i=1;i<=row;i++)
+            {
+                for(j=1;j<=col;j++)
+                {
+                    cout<<" a["<<i<<" ][ "<<j<<"] :- "<<endl;
+                    cin>>arr[i][j];
+                    trans1[i][j]=arr[i][j];
+                    trans2[i][j]=arr[i][j];
+                }
+            }
+            for(i=1;i<=col;i++)
+            {
+                for(j=1;j<=row;j++)
+                {
+                    k=j+1;
+
+                    if(trans1[i][j]!=trans1[i][k]  )
+                    {
+                        cout<<trans1[i][j];
+                        cout<<endl;
+                    }
+                    cout<<endl;
+                }
+               for(j=row;j>=1;--j)
+               {
+                k=j+1;
+                    if(trans1[i][j]==trans1[i][k])
+                    {
+                        trans2[i][j]='*';
+                        cout<<trans2[i][j];
+                        cout<<endl;
+                    }
+                    cout<<endl;
+              }
+            }
+        }
+
+        else
+        {
+            cout<<" Need to enter row value should be >1 "<<endl;
+        }
 
 
     }
 
-    void diagonal_op()
-    {
+        void diagonal_op()
+        {
 
-    }
+        }
 
 };
 
