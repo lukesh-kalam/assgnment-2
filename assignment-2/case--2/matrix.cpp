@@ -39,7 +39,7 @@ public:
     }
 
 private:
-    column_op()                 //column operation
+  void  column_op()                 //column operation
     {
         cout<<"Enter row :- "<<endl;
         cin>>row;
