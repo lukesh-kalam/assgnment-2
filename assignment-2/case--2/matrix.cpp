@@ -12,7 +12,7 @@ class matrix                    //matrix class is created
 
 public:
 
-    char arr[100][100],arr1[100][100],trans1[100][100],trans2[100][100];      //created empty array and required things
+    char arr[100][100],arr1[100][100];      //created empty array and required things
 
     int row,col,i,j,k;
 
