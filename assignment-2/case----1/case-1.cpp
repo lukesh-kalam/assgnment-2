@@ -1,25 +1,95 @@
 #include<iostream>
+
+
+
 #include<map>
+
+
+
 #include<string.h>
+
+
+
 using namespace std;
+
+
+
+
+
+
+
 class student           //creating class
+
+
+
 {
+
+
+
 public:
-    map<string,string> nameEmail;
-    map<string,string> nameFriend;
-    map<string,string> nameSug;
+
+
+
+    map<string,string> mp1;
+
+
+
+    map<string,string> mp2;
+
+
+
+    map<string,string> mp3;
+
+
+
     student()           //student class constructor
+
+
+
     {
+
+
+
         cout<<"Student class constructor is involked "<<endl;
+
+
+
         cout<<" Press 1 to add user "<<endl;
+
+
+
         cout<<" press 2 to display user list"<<endl;
+
+
+
         cout<<" press 3 to search user list"<<endl;
+
+
+
         cout<<" press 4 to delete user list"<<endl;
+
+
+
         cout<<" press 5 to search by friend "<<endl;
+
+
+
         cout<<" press 6 to get suggssion "<<endl;
+
+
+
         cout<<" press 7 to only display list "<<endl;
+
+
+
     }
-    void option()      //menu card
+
+
+
+     void option()      //menu card
+
+
+
     {
 
 
@@ -172,11 +242,11 @@ public:
 
 
 
-        nameEmail.insert(make_pair(name,email));  //inserting
+        mp1.insert(make_pair(name,email));  //inserting
 
 
 
-        nameFriend.insert(make_pair(name,frnd));
+        mp2.insert(make_pair(name,frnd));
 
 
 
@@ -264,11 +334,11 @@ public:
 
 
 
-        nameFriend.insert(make_pair(name,email));
+        mp1.insert(make_pair(name,email));
 
 
 
-        nameFriend.insert(make_pair(name,frnd));
+        mp2.insert(make_pair(name,frnd));
 
 
 
@@ -300,7 +370,7 @@ public:
 
 
 
-            for(auto it=nameEmail.begin();it!=nameEmail.end();it++) //using iterator
+            for(auto it=mp1.begin();it!=mp1.end();it++) //using iterator
 
 
 
@@ -308,7 +378,7 @@ public:
 
 
 
-                for(auto et=nameFriend.begin();et!=nameFriend.end();et++)
+                for(auto et=mp2.begin();et!=mp2.end();et++)
 
 
 
@@ -376,7 +446,7 @@ public:
 
 
 
-        for(auto it=nameFriend.begin();it!=nameFriend.end();it++)
+        for(auto it=mp2.begin();it!=mp2.end();it++)
 
 
 
@@ -384,7 +454,7 @@ public:
 
 
 
-            for(auto et=nameEmail.begin();et!=nameEmail.end();et++)
+            for(auto et=mp1.begin();et!=mp1.end();et++)
 
 
 
@@ -400,11 +470,11 @@ public:
 
 
 
-                    nameEmail.erase(it->first);
+                    mp1.erase(it->first);
 
 
 
-                    nameFriend.erase(it->first);
+                    mp2.erase(it->first);
 
 
 
@@ -436,11 +506,11 @@ public:
 
 
 
-                        nameEmail.erase(it->first);
+                        mp1.erase(it->first);
 
 
 
-                        nameFriend.erase(it->first);
+                        mp2.erase(it->first);
 
 
 
@@ -496,7 +566,7 @@ public:
 
 
 
-        for(auto it=nameFriend.begin();it!=nameFriend.end();it++)
+        for(auto it=mp2.begin();it!=mp2.end();it++)
 
 
 
@@ -504,7 +574,7 @@ public:
 
 
 
-            for(auto et=nameEmail.begin();et!=nameEmail.end();et++)
+            for(auto et=mp1.begin();et!=mp1.end();et++)
 
 
 
@@ -556,11 +626,11 @@ public:
 
 
 
-                        nameEmail.erase(et->first);       //erase from list
+                        mp1.erase(et->first);       //erase from list
 
 
 
-                        nameFriend.erase(it->first);
+                        mp2.erase(it->first);
 
 
 
@@ -648,19 +718,19 @@ public:
 
 
 
-         nameEmail.erase(name);
+         mp1.erase(name);
 
 
 
-         nameFriend.erase(name);
+         mp2.erase(name);
 
 
 
-         nameEmail.insert(make_pair(Nname,email));
+         mp1.insert(make_pair(Nname,email));
 
 
 
-         nameFriend.insert(make_pair(Nname,nFrnd));
+         mp2.insert(make_pair(Nname,nFrnd));
 
 
 
@@ -708,7 +778,7 @@ public:
 
 
 
-        for(auto et=nameFriend.begin();et!=nameFriend.end();et++)
+        for(auto et=mp2.begin();et!=mp2.end();et++)
 
 
 
@@ -764,7 +834,7 @@ public:
 
 
 
-            for(auto it=nameEmail.begin();it!=nameEmail.end();it++) //using iterator
+            for(auto it=mp1.begin();it!=mp1.end();it++) //using iterator
 
 
 
@@ -772,7 +842,7 @@ public:
 
 
 
-                for(auto et=nameFriend.begin();et!=nameFriend.end();et++)
+                for(auto et=mp2.begin();et!=mp2.end();et++)
 
 
 
@@ -828,7 +898,7 @@ public:
 
 
 
-    for(auto it=nameEmail.begin();it!=nameEmail.end();it++)
+    for(auto it=mp1.begin();it!=mp1.end();it++)
 
     {
 
@@ -838,7 +908,7 @@ public:
 
         
 
-        for(auto et=nameFriend.begin();et!=nameFriend.end();et++)
+        for(auto et=mp2.begin();et!=mp2.end();et++)
 
 
 
@@ -862,7 +932,7 @@ public:
 
 
 
-                for(auto it=nameFriend.begin();it!=nameFriend.end();it++)
+                for(auto it=mp2.begin();it!=mp2.end();it++)
 
 
 
