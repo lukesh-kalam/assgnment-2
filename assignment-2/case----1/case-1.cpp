@@ -253,7 +253,10 @@ int main(int argc,char* argv[])
     {
         if(strcmp(argv[1],"-h")==0)     //help command
         {
-            cout<<" case-1 "<<endl;
+            cout<<" This program helps in printing  "<<endl;
+            cout<<" Name,Email and Friend name"<<endl;
+            cout<<" And also helps in giving suggession "<<endl;
+
         }
     }
 
